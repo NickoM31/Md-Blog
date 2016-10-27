@@ -11,7 +11,7 @@
 
 		alice: function(){
 			$.ajax({
-				url : 'http://192.168.1.40:1337/alice.md',
+				url : 'http://localhost:2000/alice.md',
 				method : 'GET',
 				datatype : 'html',
 				success : function(response){
@@ -23,15 +23,15 @@
 
 		json : function(){
 			$.ajax({
-				url : 'http://192.168.1.40:1337/menu.json',
+				url : 'http://localhost:2000/menu.json',
 				method : 'GET',
 				datatype : 'html',
 				success : function(data){
 					var tab = data.menu;
 					for(var i = 0; i < tab.length; i++){
 						var titres = tab[i].title;
-						var pathpath = "http://192.168.1.40:1337" + tab[i].path;
-						$("#app").append('<span>'+'<a class="marko"data-info="'+pathpath+'" href="#">'+titres+'</a>'+'</span>');
+						var pathpath = "http://localhost:2000" + tab[i].path;
+						$("#app").append('<li>'+'<a class="marko"data-info="'+pathpath+'" href="#">'+titres+'</a>'+'</li>');
 						app.convertir();
 					}
 				}
